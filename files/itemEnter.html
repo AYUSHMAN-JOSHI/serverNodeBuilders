@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry</title>
+</head>
+
+<body>
+    <form method="post" id="itemSubmit">
+        <fieldset>
+            <legend>Vegetable Details</legend>
+            <table>
+                <tr>
+                    <td><label for="vegetable">Vegetable</label></td>
+                    <td><input type="text" name="vegetable" id="vegetable"></td>
+                </tr>
+                <tr>
+                    <td><label for="rate">Rate (₹/kg)</label></td>
+                    <td><input type="text" name="rate" id="rate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="SUBMIT">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        const itemSubmit = document.getElementById('itemSubmit');
+
+        itemSubmit.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            let vegetable = document.getElementById('vegetable').value;
+            let rate = document.getElementById('rate').value;
+
+            console.log(vegetable, rate);
+
+            const response = await fetch('/items', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    vegetable: vegetable,
+                    rate: parseInt(rate)
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>
