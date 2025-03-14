@@ -87,9 +87,17 @@
             <div class="accordion-body">
               <form id="upi">
                 <div class="mb-3">
-                  <label for="upi-id" class="form-label"
-                    >Enter UPI ID</label
-                  >
+                  <label for="sAddress" class="form-label">
+                    Enter your address
+                  </label>
+                  <input
+                    type="text"
+                    name="sAddress"
+                    id="sAddress"
+                    class="form-control"
+                    aria-describedby="addr"
+                  />
+                  <label for="upi-id" class="form-label">Enter UPI ID</label>
                   <input
                     type="text"
                     class="form-control"
@@ -100,7 +108,7 @@
                     Your UPI ID is always secure with us.
                   </div>
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Pay</button>
               </form>
             </div>
@@ -127,9 +135,7 @@
             <div class="accordion-body">
               <form id="net-banking">
                 <div class="mb-3">
-                  <label for="account-id" class="form-label"
-                    >Account No.</label
-                  >
+                  <label for="account-id" class="form-label">Account No.</label>
                   <input
                     type="text"
                     class="form-control"
@@ -138,14 +144,8 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="ifsc" class="form-label"
-                    >IFSC Code</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="ifsc"
-                  />
+                  <label for="ifsc" class="form-label">IFSC Code</label>
+                  <input type="text" class="form-control" id="ifsc" />
                 </div>
                 <button type="submit" class="btn btn-primary">Pay</button>
               </form>
